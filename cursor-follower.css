@@ -1,0 +1,45 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100vh !important; /* Force viewport height */
+    min-height: 100vh !important;
+    overflow: auto !important;
+    position: static !important;
+    box-sizing: border-box;
+    cursor: default;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #f2e828;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+  
+  .bomb {
+    width: 20px;
+    height: 20px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+    animation: bomb-effect 0.6s ease-out forwards;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes bomb-effect {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+    }
+  }
